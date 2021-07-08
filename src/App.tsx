@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from "classnames";
 
 import Bear from "./Bear";
 import Calculator from "./Calculator";
