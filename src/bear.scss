@@ -1,0 +1,28 @@
+.bear {
+  position: relative;
+  width: 100vw;
+  margin: 80px 32px 16px 32px;
+
+  .container {
+    position: relative;
+  }
+
+  img {
+    width: 128px;
+  }
+
+  .message {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -80px;
+    left: 64px;
+    font-size: 12px;
+    max-width: 160px;
+    height: 100px;
+    padding-left: 8px;
+    word-break: break-word;
+    background-color: rgba(207,79,207,0.3);
+    clip-path: polygon(0 29%, 99% 22%, 100% 75%, 25% 74%, 11% 88%, 14% 75%, 0% 75%);
+  }
+}
