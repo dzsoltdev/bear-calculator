@@ -47,9 +47,11 @@ const Calculator = () => {
     </div>
 
     <div className={'fraction'}>
-      <input type={'number'} value={getDivisibleResult()} disabled/>
+      <div className={'result'}>{getDivisibleResult()}</div>
+      {/*<input type={'number'} value={getDivisibleResult()} disabled/>*/}
       <hr/>
-      <input type={'number'} value={getDividerResult()} disabled/>
+      <div className={'result'}>{getDividerResult()}</div>
+      {/*<input type={'number'} value={getDividerResult()} disabled/>*/}
     </div>
   </div>;
 };
