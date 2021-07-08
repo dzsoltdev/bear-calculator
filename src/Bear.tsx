@@ -5,7 +5,7 @@ import pic from './milkmocha.png'
 const Bear = () => {
   return <div className={'bear'}>
     <div className={'container'}>
-      <img src={pic}/>
+      <img src={pic} alt={''}/>
       <span className={'message'}>Maci, mennyi egynyolcad háromnegyede?</span>
     </div>
   </div>
