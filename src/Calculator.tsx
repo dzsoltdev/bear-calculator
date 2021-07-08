@@ -34,15 +34,23 @@ const Calculator = () => {
   return <div className={'calculator'}>
     <div className={'inputs'}>
       <div className={'fraction'}>
-        <input type={'number'} value={divisibleA} onChange={(e) => setDivisibleA(Number(e.target.value))}/>
+        <div className={'input-shadow'}>
+          <input type={'number'} value={divisibleA} onChange={(e) => setDivisibleA(Number(e.target.value))}/>
+        </div>
         <hr/>
-        <input type={'number'} value={dividerA} onChange={(e) => setDividerA(Number(e.target.value))}/>
+        <div className={'input-shadow'}>
+          <input type={'number'} value={dividerA} onChange={(e) => setDividerA(Number(e.target.value))}/>
+        </div>
       </div>
 
       <div className={'fraction'}>
-        <input type={'number'} value={divisibleB} onChange={(e) => setDivisibleB(Number(e.target.value))}/>
+        <div className={'input-shadow'}>
+          <input type={'number'} value={divisibleB} onChange={(e) => setDivisibleB(Number(e.target.value))}/>
+        </div>
         <hr/>
-        <input type={'number'} value={dividerB} onChange={(e) => setDividerB(Number(e.target.value))}/>
+        <div className={'input-shadow'}>
+          <input type={'number'} value={dividerB} onChange={(e) => setDividerB(Number(e.target.value))}/>
+        </div>
       </div>
     </div>
 
