@@ -1,12 +1,12 @@
-import React, {useState, useCallback} from "react";
+import React, {useState, useCallback, ChangeEvent} from "react";
 import './Calculator.scss';
 
 const Calculator = () => {
-  const [divisibleA, setDivisibleA] = useState<number>(1);
-  const [dividerA, setDividerA] = useState<number>(8);
+  const [divisibleA, setDivisibleA] = useState<any>(1);
+  const [dividerA, setDividerA] = useState<any>(8);
 
-  const [divisibleB, setDivisibleB] = useState<number>(3);
-  const [dividerB, setDividerB] = useState<number>(4);
+  const [divisibleB, setDivisibleB] = useState<any>(3);
+  const [dividerB, setDividerB] = useState<any>(4);
 
   const getDivisibleResult = useCallback(() => {
     let retVal = divisibleA * divisibleB;
@@ -31,25 +31,33 @@ const Calculator = () => {
     return retVal;
   }, [dividerA, dividerB, divisibleA, divisibleB]);
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>, callback: Function) => {
+    let value = e.target.value;
+
+    if(value.length > 1 && value?.[0] === '0') value = value.substring(1, value.length);
+
+    callback(value);
+  }
+
   return <div className={'calculator'}>
     <div className={'inputs'}>
       <div className={'fraction'}>
         <div className={'input-shadow'}>
-          <input type={'number'} value={divisibleA} onChange={(e) => setDivisibleA(Number(e.target.value))}/>
+          <input type={'number'} min={1} value={divisibleA} onChange={(e) => handleChange(e, setDivisibleA)}/>
         </div>
         <hr/>
         <div className={'input-shadow'}>
-          <input type={'number'} value={dividerA} onChange={(e) => setDividerA(Number(e.target.value))}/>
+          <input type={'number'} min={1} value={dividerA} onChange={(e) => handleChange(e, setDividerA)}/>
         </div>
       </div>
 
       <div className={'fraction'}>
         <div className={'input-shadow'}>
-          <input type={'number'} value={divisibleB} onChange={(e) => setDivisibleB(Number(e.target.value))}/>
+          <input type={'number'} min={1} value={divisibleB} onChange={(e) => handleChange(e, setDivisibleB)}/>
         </div>
         <hr/>
         <div className={'input-shadow'}>
-          <input type={'number'} value={dividerB} onChange={(e) => setDividerB(Number(e.target.value))}/>
+          <input type={'number'} min={1} value={dividerB} onChange={(e) => handleChange(e, setDividerB)}/>
         </div>
       </div>
     </div>
