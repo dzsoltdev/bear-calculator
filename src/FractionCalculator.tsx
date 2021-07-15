@@ -1,7 +1,7 @@
 import React, {useState, useCallback, ChangeEvent} from "react";
-import './Calculator.scss';
+import './FractionCalculator.scss';
 
-const Calculator = () => {
+const FractionCalculator = () => {
   const [divisibleA, setDivisibleA] = useState<any>(1);
   const [dividerA, setDividerA] = useState<any>(8);
 
@@ -39,7 +39,7 @@ const Calculator = () => {
     callback(value);
   }
 
-  return <div className={'calculator'}>
+  return <div className={'fraction-calculator'}>
     <div className={'inputs'}>
       <div className={'fraction'}>
         <div className={'input-shadow'}>
@@ -64,15 +64,13 @@ const Calculator = () => {
 
     <div className={'fraction'}>
       <div className={'result'}>{getDivisibleResult()}</div>
-      {/*<input type={'number'} value={getDivisibleResult()} disabled/>*/}
       <hr/>
       <div className={'result'}>{getDividerResult()}</div>
-      {/*<input type={'number'} value={getDividerResult()} disabled/>*/}
     </div>
   </div>;
 };
 
-export default Calculator;
+export default FractionCalculator;
 
 const getGreatestCommonDivisor = (x: number, y: number) => {
   let a = x;

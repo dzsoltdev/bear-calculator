@@ -24,16 +24,10 @@ reportWebVitals();
 
 window.addEventListener('beforeinstallprompt', (event) => {
   const windowObject: any = window;
-  // console.log('👍', 'beforeinstallprompt', event);
-  // Stash the event so it can be triggered later.
   windowObject.deferredPrompt = event;
-  // Remove the 'hidden' class from the install button container
-  // divInstall.classList.toggle('hidden', false);
 });
 
 window.addEventListener('appinstalled', (event) => {
   const windowObject: any = window;
-  // console.log('👍', 'appinstalled', event);
-  // Clear the deferredPrompt so it can be garbage collected
   windowObject.deferredPrompt = null;
 });
